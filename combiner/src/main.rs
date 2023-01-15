@@ -68,7 +68,9 @@ impl FloatingImage {
     }
 }
 
+/// find image from the path
 fn find_image_from_path(path: String) -> (DynamicImage, ImageFormat) {
+    //! return image & its format
     let image_reader = Reader::open(path).unwrap();
     let image_format = image_reader.format().unwrap();
     let image = image_reader.decode().unwrap();
